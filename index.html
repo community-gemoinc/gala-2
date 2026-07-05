@@ -10,10 +10,10 @@
   body{background:#fff;}
   .tw-wrap{font-family:'Montserrat',sans-serif;color:#1A1A1A;background:#fff;max-width:900px;margin:0 auto;}
   .tw-nav{display:flex;align-items:center;justify-content:space-between;padding:28px 48px;border-bottom:0.5px solid #E0DDD9;}
-  .tw-logo{display:flex;flex-direction:column;gap:2px;}
+  .tw-logo{display:flex;flex-direction:column;align-items:center;gap:2px;}
   .tw-logo-name{font-size:13px;font-weight:200;letter-spacing:0.35em;color:#1A1A1A;}
-  .tw-logo-mark{width:32px;height:32px;border:1px solid #1A1A1A;border-radius:50%;display:flex;align-items:center;justify-content:center;}
-  .tw-logo-w{font-size:11px;font-weight:200;letter-spacing:0.1em;}
+  .tw-logo-mark{width:34px;height:34px;display:flex;align-items:center;justify-content:center;}
+  .tw-logo-mark img{width:100%;height:100%;object-fit:contain;}
   .tw-nav-links{display:flex;gap:32px;}
   .tw-nav-links a{font-size:11px;font-weight:300;letter-spacing:0.2em;color:#888;text-decoration:none;}
   .tw-hero{padding:100px 48px 80px;border-bottom:0.5px solid #E0DDD9;}
@@ -25,9 +25,11 @@
   .tw-product{padding:64px 48px;border-right:0.5px solid #E0DDD9;}
   .tw-product:last-child{border-right:none;}
   .tw-product-tag{font-size:9px;font-weight:300;letter-spacing:0.4em;color:#888;margin-bottom:40px;}
-  .tw-product-img{width:100%;height:220px;background:#F8F6F3;border:0.5px solid #E0DDD9;display:flex;align-items:center;justify-content:center;margin-bottom:28px;}
+  .tw-product-img{width:100%;height:280px;background:#F8F6F3;border:0.5px solid #E0DDD9;display:flex;align-items:center;justify-content:center;margin-bottom:28px;overflow:hidden;}
+  .tw-product-img img{width:100%;height:100%;object-fit:cover;object-position:center 25%;}
   .tw-product-img-inner{width:80px;height:110px;background:#fff;border:0.5px solid #E0DDD9;display:flex;align-items:flex-end;justify-content:center;padding-bottom:10px;}
   .tw-product-img-logo{font-size:7px;font-weight:200;letter-spacing:0.2em;color:#ccc;}
+  .tw-product-soon{font-size:8px;font-weight:300;letter-spacing:0.3em;color:#bbb;}
   .tw-product-name{font-size:14px;font-weight:200;letter-spacing:0.2em;margin-bottom:10px;}
   .tw-product-desc{font-size:12px;font-weight:300;color:#888;line-height:1.8;}
   .tw-values{padding:80px 48px;border-bottom:0.5px solid #E0DDD9;}
@@ -70,7 +72,7 @@
 
   <nav class="tw-nav">
     <div class="tw-logo">
-      <div class="tw-logo-mark"><span class="tw-logo-w">W</span></div>
+      <div class="tw-logo-mark"><img src="assets/logo-mark.png" alt="The Way"></div>
       <span class="tw-logo-name">THE WAY</span>
     </div>
     <div class="tw-nav-links">
@@ -98,16 +100,15 @@
       </div>
       <p class="tw-product-name">ТВЁРДАЯ ОБЛОЖКА</p>
       <p class="tw-product-desc">Скруглённые края страниц. Обложка под ткань или кожу. Формат А5.</p>
+      <p class="tw-product-soon">МОКАП В РАЗРАБОТКЕ</p>
     </div>
     <div class="tw-product">
       <p class="tw-product-tag">02 / ВИНИЛОВАЯ ПАПКА</p>
       <div class="tw-product-img">
-        <div class="tw-product-img-inner">
-          <span class="tw-product-img-logo">THE WAY</span>
-        </div>
+        <img src="assets/cover-front-angle.jpg" alt="THE WAY — виниловая обложка, пружинный переплёт">
       </div>
       <p class="tw-product-name">ПРОЗРАЧНАЯ ОБЛОЖКА</p>
-      <p class="tw-product-desc">Пружинный переплёт. Прозрачная виниловая обложка с резинкой. Формат А5.</p>
+      <p class="tw-product-desc">Дисковый переплёт. Прозрачная виниловая обложка с резинкой, тиснёная надпись на обложке. Формат А5.</p>
     </div>
   </section>
 
@@ -139,6 +140,9 @@
 
   <section class="tw-inside">
     <p class="tw-inside-head">ВНУТРИ ПЛАНЕРА</p>
+    <div class="tw-product-img" style="height:320px;margin-bottom:24px;">
+      <img src="assets/cover-open.jpg" alt="THE WAY — разворот с месячными разделителями" style="object-position:center 15%;">
+    </div>
     <div class="tw-inside-pages">
       <div class="tw-page-mock">
         <p class="tw-page-mock-title">ВНУТРЕННИЙ КОМПАС</p>
