@@ -1,268 +1,211 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Way — Путь</title>
+<title>THE WAY — Канцелярия со смыслом</title>
 <style>
-  :root{
-    --bg:#f7f5f0;
-    --paper:#ffffff;
-    --ink:#2b2926;
-    --ink-soft:#6b675f;
-    --line:#e4e0d8;
-    --accent:#8a8365;
-    --accent-soft:#eeece2;
-  }
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap');
   *{box-sizing:border-box;margin:0;padding:0;}
-  body{
-    background:var(--bg);
-    color:var(--ink);
-    font-family:'Helvetica Neue', Arial, sans-serif;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  a{color:inherit;text-decoration:none;}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 32px;}
-  h1,h2,h3{
-    text-transform:uppercase;
-    font-weight:400;
-    letter-spacing:0.12em;
-  }
-
-  header{
-    position:sticky;top:0;z-index:10;
-    background:rgba(247,245,240,0.92);
-    backdrop-filter:blur(6px);
-    border-bottom:1px solid var(--line);
-  }
-  header .wrap{
-    display:flex;align-items:center;justify-content:space-between;
-    height:76px;
-  }
-  .logo{
-    font-size:20px;
-    letter-spacing:0.3em;
-    text-transform:uppercase;
-    font-weight:400;
-  }
-  .logo small{display:block;font-size:10px;letter-spacing:0.2em;color:var(--ink-soft);}
-  nav ul{list-style:none;display:flex;gap:36px;}
-  nav a{
-    font-size:12px;letter-spacing:0.15em;text-transform:uppercase;
-    color:var(--ink-soft);
-    transition:color .2s;
-  }
-  nav a:hover{color:var(--ink);}
-
-  .hero{
-    padding:120px 0 100px;
-    text-align:center;
-    border-bottom:1px solid var(--line);
-  }
-  .hero .eyebrow{
-    font-size:12px;letter-spacing:0.35em;text-transform:uppercase;
-    color:var(--accent);margin-bottom:24px;
-  }
-  .hero h1{
-    font-size:56px;letter-spacing:0.08em;
-    max-width:760px;margin:0 auto 28px;
-  }
-  .hero p.sub{
-    font-size:16px;color:var(--ink-soft);
-    max-width:480px;margin:0 auto 44px;
-    font-style:italic;
-    letter-spacing:0.01em;
-  }
-  .btn{
-    display:inline-block;
-    padding:16px 40px;
-    border:1px solid var(--ink);
-    font-size:12px;letter-spacing:0.2em;text-transform:uppercase;
-    transition:background .2s,color .2s;
-  }
-  .btn:hover{background:var(--ink);color:var(--paper);}
-  .btn-ghost{border-color:var(--line);color:var(--ink-soft);margin-left:16px;}
-  .btn-ghost:hover{border-color:var(--ink);background:transparent;color:var(--ink);}
-
-  section{padding:100px 0;border-bottom:1px solid var(--line);}
-  section:last-of-type{border-bottom:none;}
-
-  .philosophy{text-align:center;}
-  .philosophy h2{font-size:14px;letter-spacing:0.3em;color:var(--accent);margin-bottom:16px;}
-  .philosophy h3{font-size:36px;max-width:640px;margin:0 auto 40px;letter-spacing:0.05em;}
-  .pillars{
-    display:grid;grid-template-columns:repeat(4,1fr);gap:32px;
-    margin-top:56px;
-  }
-  .pillar{padding:24px 12px;}
-  .pillar .num{font-size:11px;color:var(--accent);letter-spacing:0.2em;margin-bottom:14px;}
-  .pillar h4{
-    font-size:13px;letter-spacing:0.1em;text-transform:uppercase;
-    font-weight:400;margin-bottom:10px;
-  }
-  .pillar p{font-size:13px;color:var(--ink-soft);}
-
-  .products{background:var(--paper);}
-  .section-head{text-align:center;margin-bottom:64px;}
-  .section-head h2{font-size:14px;letter-spacing:0.3em;color:var(--accent);margin-bottom:16px;}
-  .section-head h3{font-size:36px;letter-spacing:0.05em;}
-
-  .cards{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
-  .card{
-    border:1px solid var(--line);
-    padding:0;
-    display:flex;flex-direction:column;
-  }
-  .card-image{
-    height:340px;
-    background:linear-gradient(160deg, var(--accent-soft), var(--paper));
-    display:flex;align-items:center;justify-content:center;
-    border-bottom:1px solid var(--line);
-    position:relative;
-  }
-  .mock-planner{
-    width:150px;height:200px;
-    background:var(--paper);
-    border:1px solid var(--ink);
-    box-shadow:6px 6px 0 var(--accent-soft);
-    display:flex;align-items:center;justify-content:center;
-    font-size:10px;letter-spacing:0.2em;color:var(--ink-soft);
-    text-transform:uppercase;
-  }
-  .mock-planner.vinyl{border-radius:0;box-shadow:none;border:1px dashed var(--ink-soft);}
-  .card-body{padding:36px;}
-  .card-body h4{
-    font-size:18px;letter-spacing:0.1em;text-transform:uppercase;
-    font-weight:400;margin-bottom:12px;
-  }
-  .card-body p{font-size:14px;color:var(--ink-soft);margin-bottom:20px;}
-  .card-body .meta{
-    display:flex;gap:18px;font-size:11px;letter-spacing:0.1em;
-    text-transform:uppercase;color:var(--accent);
-  }
-
-  .quote{
-    text-align:center;
-    padding:110px 0;
-  }
-  .quote blockquote{
-    font-size:28px;font-style:italic;max-width:640px;margin:0 auto 24px;
-    letter-spacing:0.01em;color:var(--ink);
-  }
-  .quote span{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-soft);}
-
-  footer{padding:60px 0 40px;text-align:center;}
-  footer .logo{margin-bottom:20px;}
-  .domains{font-size:12px;color:var(--ink-soft);letter-spacing:0.05em;margin-bottom:28px;}
-  .domains span{margin:0 10px;}
-  footer .fine{font-size:11px;color:var(--ink-soft);letter-spacing:0.05em;}
-
-  @media (max-width:860px){
-    .pillars{grid-template-columns:1fr 1fr;}
-    .cards{grid-template-columns:1fr;}
-    .hero h1{font-size:38px;}
-    nav ul{display:none;}
-  }
+  body{background:#fff;}
+  .tw-wrap{font-family:'Montserrat',sans-serif;color:#1A1A1A;background:#fff;max-width:900px;margin:0 auto;}
+  .tw-nav{display:flex;align-items:center;justify-content:space-between;padding:28px 48px;border-bottom:0.5px solid #E0DDD9;}
+  .tw-logo{display:flex;flex-direction:column;gap:2px;}
+  .tw-logo-name{font-size:13px;font-weight:200;letter-spacing:0.35em;color:#1A1A1A;}
+  .tw-logo-mark{width:32px;height:32px;border:1px solid #1A1A1A;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+  .tw-logo-w{font-size:11px;font-weight:200;letter-spacing:0.1em;}
+  .tw-nav-links{display:flex;gap:32px;}
+  .tw-nav-links a{font-size:11px;font-weight:300;letter-spacing:0.2em;color:#888;text-decoration:none;}
+  .tw-hero{padding:100px 48px 80px;border-bottom:0.5px solid #E0DDD9;}
+  .tw-hero-eyebrow{font-size:10px;font-weight:300;letter-spacing:0.4em;color:#888;margin-bottom:28px;}
+  .tw-hero-h1{font-size:42px;font-weight:100;letter-spacing:0.08em;line-height:1.2;margin-bottom:20px;max-width:520px;}
+  .tw-hero-sub{font-size:13px;font-weight:300;color:#888;line-height:1.8;max-width:360px;margin-bottom:48px;}
+  .tw-btn{display:inline-block;padding:14px 36px;border:0.5px solid #1A1A1A;font-size:10px;font-weight:300;letter-spacing:0.3em;color:#1A1A1A;text-decoration:none;background:transparent;cursor:pointer;}
+  .tw-products{display:grid;grid-template-columns:1fr 1fr;border-bottom:0.5px solid #E0DDD9;}
+  .tw-product{padding:64px 48px;border-right:0.5px solid #E0DDD9;}
+  .tw-product:last-child{border-right:none;}
+  .tw-product-tag{font-size:9px;font-weight:300;letter-spacing:0.4em;color:#888;margin-bottom:40px;}
+  .tw-product-img{width:100%;height:220px;background:#F8F6F3;border:0.5px solid #E0DDD9;display:flex;align-items:center;justify-content:center;margin-bottom:28px;}
+  .tw-product-img-inner{width:80px;height:110px;background:#fff;border:0.5px solid #E0DDD9;display:flex;align-items:flex-end;justify-content:center;padding-bottom:10px;}
+  .tw-product-img-logo{font-size:7px;font-weight:200;letter-spacing:0.2em;color:#ccc;}
+  .tw-product-name{font-size:14px;font-weight:200;letter-spacing:0.2em;margin-bottom:10px;}
+  .tw-product-desc{font-size:12px;font-weight:300;color:#888;line-height:1.8;}
+  .tw-values{padding:80px 48px;border-bottom:0.5px solid #E0DDD9;}
+  .tw-values-head{font-size:10px;font-weight:300;letter-spacing:0.4em;color:#888;margin-bottom:48px;}
+  .tw-values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;}
+  .tw-value-num{font-size:10px;font-weight:300;letter-spacing:0.2em;color:#ccc;margin-bottom:12px;}
+  .tw-value-title{font-size:12px;font-weight:200;letter-spacing:0.2em;margin-bottom:8px;}
+  .tw-value-text{font-size:11px;font-weight:300;color:#888;line-height:1.7;}
+  .tw-inside{padding:80px 48px;border-bottom:0.5px solid #E0DDD9;}
+  .tw-inside-head{font-size:10px;font-weight:300;letter-spacing:0.4em;color:#888;margin-bottom:48px;}
+  .tw-inside-pages{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .tw-page-mock{background:#F8F6F3;border:0.5px solid #E0DDD9;padding:16px 12px;}
+  .tw-page-mock-title{font-size:8px;font-weight:400;letter-spacing:0.15em;margin-bottom:10px;color:#1A1A1A;}
+  .tw-page-line{height:0.5px;background:#D5D2CE;margin-bottom:5px;}
+  .tw-page-line.short{width:60%;}
+  .tw-page-line.vshort{width:40%;}
+  .tw-page-label{font-size:7px;font-weight:300;color:#888;margin-top:8px;}
+  .tw-form{padding:80px 48px;background:#F8F6F3;border-bottom:0.5px solid #E0DDD9;}
+  .tw-form-head{font-size:10px;font-weight:300;letter-spacing:0.4em;color:#888;margin-bottom:16px;}
+  .tw-form-title{font-size:26px;font-weight:100;letter-spacing:0.08em;margin-bottom:40px;}
+  .tw-form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+  .tw-input{width:100%;padding:14px 16px;border:0.5px solid #C8C5C0;background:#fff;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:300;color:#1A1A1A;letter-spacing:0.05em;outline:none;}
+  .tw-input::placeholder{color:#bbb;}
+  .tw-radios{display:flex;gap:24px;margin-bottom:32px;}
+  .tw-radio-label{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:300;color:#888;cursor:pointer;}
+  .tw-radio-label input{accent-color:#1A1A1A;}
+  .tw-form-note{font-size:10px;font-weight:300;color:#aaa;margin-top:20px;}
+  .tw-tg{padding:48px;display:flex;align-items:center;justify-content:space-between;border-bottom:0.5px solid #E0DDD9;}
+  .tw-tg-text{font-size:11px;font-weight:300;color:#888;letter-spacing:0.1em;}
+  .tw-tg-btn{padding:12px 28px;border:0.5px solid #888;font-size:10px;font-weight:300;letter-spacing:0.25em;color:#888;background:transparent;cursor:pointer;text-decoration:none;display:inline-block;}
+  .tw-footer{padding:40px 48px;display:flex;align-items:center;justify-content:space-between;}
+  .tw-footer-copy{font-size:10px;font-weight:300;color:#bbb;letter-spacing:0.1em;}
+  .tw-footer-links{display:flex;gap:24px;}
+  .tw-footer-links a{font-size:10px;font-weight:300;color:#bbb;letter-spacing:0.1em;text-decoration:none;}
 </style>
 </head>
 <body>
 
-<header>
-  <div class="wrap">
-    <div class="logo">The Way<small>Путь — Stationery with Meaning</small></div>
-    <nav>
-      <ul>
-        <li><a href="#philosophy">Philosophy</a></li>
-        <li><a href="#planners">Planners</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+<div class="tw-wrap">
 
-<section class="hero">
-  <div class="wrap">
-    <div class="eyebrow">The Way Is The Essence</div>
-    <h1>Stationery With Meaning</h1>
-    <p class="sub">A weekly planner for those who believe the path toward their goals matters as much as the goals themselves.</p>
-    <a href="#planners" class="btn">View Planners</a>
-    <a href="#philosophy" class="btn btn-ghost">Our Philosophy</a>
-  </div>
-</section>
-
-<section class="philosophy" id="philosophy">
-  <div class="wrap">
-    <h2>Philosophy</h2>
-    <h3>Harmony, balance, and mindful consumption — in a single A5 page.</h3>
-    <div class="pillars">
-      <div class="pillar">
-        <div class="num">01</div>
-        <h4>Healthy Lifestyle</h4>
-        <p>Structure that supports wellbeing, not another source of pressure.</p>
-      </div>
-      <div class="pillar">
-        <div class="num">02</div>
-        <h4>Financial Clarity</h4>
-        <p>Proper money management as a quiet, ongoing practice.</p>
-      </div>
-      <div class="pillar">
-        <div class="num">03</div>
-        <h4>Independent Planning</h4>
-        <p>Built around personal values and interests, not a template for everyone.</p>
-      </div>
-      <div class="pillar">
-        <div class="num">04</div>
-        <h4>Minimalism</h4>
-        <p>Mindful consumption of fewer, better-made things.</p>
-      </div>
+  <nav class="tw-nav">
+    <div class="tw-logo">
+      <div class="tw-logo-mark"><span class="tw-logo-w">W</span></div>
+      <span class="tw-logo-name">THE WAY</span>
     </div>
-  </div>
-</section>
-
-<section class="products" id="planners">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>The Collection</h2>
-      <h3>Two Covers, One Way</h3>
+    <div class="tw-nav-links">
+      <a href="#planners">КАТАЛОГ</a>
+      <a href="#values">О БРЕНДЕ</a>
+      <a href="guide.html">ГАЙД</a>
+      <a href="#preorder">КОНТАКТЫ</a>
     </div>
-    <div class="cards">
-      <div class="card">
-        <div class="card-image"><div class="mock-planner">Hardcover · A5</div></div>
-        <div class="card-body">
-          <h4>Hardcover Edition</h4>
-          <p>Fabric or leather-style cover with rounded page edges. Built for daily wear on a desk that means to last.</p>
-          <div class="meta"><span>A5</span><span>Rounded Edges</span><span>Yearly Plan</span></div>
+  </nav>
+
+  <section class="tw-hero">
+    <p class="tw-hero-eyebrow">ПЛАНЕРЫ-ЕЖЕНЕДЕЛЬНИКИ / A5</p>
+    <h1 class="tw-hero-h1">КАНЦЕЛЯРИЯ СО СМЫСЛОМ</h1>
+    <p class="tw-hero-sub">Планер для тех, кто строит путь к своим целям осознанно — с вниманием к ЗОЖ, финансам и собственным ценностям.</p>
+    <a class="tw-btn" href="#preorder">ХОЧУ ПЕРВЫМ →</a>
+  </section>
+
+  <section class="tw-products" id="planners">
+    <div class="tw-product">
+      <p class="tw-product-tag">01 / КНИЖНЫЙ ПЕРЕПЛЁТ</p>
+      <div class="tw-product-img">
+        <div class="tw-product-img-inner">
+          <span class="tw-product-img-logo">THE WAY</span>
         </div>
       </div>
-      <div class="card">
-        <div class="card-image"><div class="mock-planner vinyl">Vinyl Folder · A5</div></div>
-        <div class="card-body">
-          <h4>Vinyl Edition</h4>
-          <p>Transparent vinyl cover with an elastic band, standard page edges. Same pages, a lighter yearly plan layout.</p>
-          <div class="meta"><span>A5</span><span>Standard Edges</span><span>Elastic Band</span></div>
+      <p class="tw-product-name">ТВЁРДАЯ ОБЛОЖКА</p>
+      <p class="tw-product-desc">Скруглённые края страниц. Обложка под ткань или кожу. Формат А5.</p>
+    </div>
+    <div class="tw-product">
+      <p class="tw-product-tag">02 / ВИНИЛОВАЯ ПАПКА</p>
+      <div class="tw-product-img">
+        <div class="tw-product-img-inner">
+          <span class="tw-product-img-logo">THE WAY</span>
         </div>
       </div>
+      <p class="tw-product-name">ПРОЗРАЧНАЯ ОБЛОЖКА</p>
+      <p class="tw-product-desc">Пружинный переплёт. Прозрачная виниловая обложка с резинкой. Формат А5.</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="quote">
-  <div class="wrap">
-    <blockquote>"Not the destination. The way you walk toward it."</blockquote>
-    <span>— The Way</span>
-  </div>
-</section>
-
-<footer id="contact">
-  <div class="wrap">
-    <div class="logo">The Way<small>Путь</small></div>
-    <div class="domains">
-      <span>thewayplanner.ru</span>·<span>thewayplanners.online</span>·<span>thewayplanner.online</span>·<span>thewayplanners.ru</span>
+  <section class="tw-values" id="values">
+    <p class="tw-values-head">ФИЛОСОФИЯ БРЕНДА</p>
+    <div class="tw-values-grid">
+      <div>
+        <p class="tw-value-num">01</p>
+        <p class="tw-value-title">ЗДОРОВЬЕ</p>
+        <p class="tw-value-text">Осознанный подход к телу и энергии как основе для движения вперёд.</p>
+      </div>
+      <div>
+        <p class="tw-value-num">02</p>
+        <p class="tw-value-title">ФИНАНСЫ</p>
+        <p class="tw-value-text">Грамотное планирование бюджета — инструмент свободы, а не ограничений.</p>
+      </div>
+      <div>
+        <p class="tw-value-num">03</p>
+        <p class="tw-value-title">ЦЕННОСТИ</p>
+        <p class="tw-value-text">Жизнь, выстроенная вокруг собственных приоритетов, а не чужих ожиданий.</p>
+      </div>
+      <div>
+        <p class="tw-value-num">04</p>
+        <p class="tw-value-title">МИНИМАЛИЗМ</p>
+        <p class="tw-value-text">Меньше лишнего — больше внимания к тому, что действительно важно.</p>
+      </div>
     </div>
-    <p class="fine">Prototype build — layout &amp; copy draft, not final. For above-average income audience seeking harmony and balance.</p>
+  </section>
+
+  <section class="tw-inside">
+    <p class="tw-inside-head">ВНУТРИ ПЛАНЕРА</p>
+    <div class="tw-inside-pages">
+      <div class="tw-page-mock">
+        <p class="tw-page-mock-title">ВНУТРЕННИЙ КОМПАС</p>
+        <div class="tw-page-line"></div><div class="tw-page-line short"></div>
+        <div class="tw-page-line"></div><div class="tw-page-line"></div>
+        <div class="tw-page-line short"></div><div class="tw-page-line"></div>
+        <div class="tw-page-line vshort"></div>
+        <p class="tw-page-label">Ценности и ориентиры</p>
+      </div>
+      <div class="tw-page-mock">
+        <p class="tw-page-mock-title">ДЕТАЛИЗАЦИЯ ЦЕЛИ</p>
+        <div class="tw-page-line"></div><div class="tw-page-line short"></div>
+        <div class="tw-page-line"></div><div class="tw-page-line"></div>
+        <div style="height:16px;border:0.5px solid #D5D2CE;margin:6px 0;display:flex;align-items:center;padding:0 4px;"><span style="font-size:7px;color:#ccc;font-weight:300;">0% ——— 50% ——— 100%</span></div>
+        <p class="tw-page-label">SMART + прогресс</p>
+      </div>
+      <div class="tw-page-mock">
+        <p class="tw-page-mock-title">ПЛАН НА НЕДЕЛЮ</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:4px;">
+          <div style="background:#fff;border:0.5px solid #E0DDD9;height:40px;padding:4px;"><span style="font-size:6px;font-weight:300;color:#888;">ПН</span></div>
+          <div style="background:#fff;border:0.5px solid #E0DDD9;height:40px;padding:4px;"><span style="font-size:6px;font-weight:300;color:#888;">ВТ</span></div>
+        </div>
+        <p class="tw-page-label">Недельный разворот</p>
+      </div>
+      <div class="tw-page-mock">
+        <p class="tw-page-mock-title">БЮДЖЕТ НА МЕСЯЦ</p>
+        <div class="tw-page-line"></div>
+        <div style="display:flex;justify-content:space-between;margin:4px 0;"><span style="font-size:7px;color:#888;font-weight:300;">ДОХОДЫ</span><span style="font-size:7px;color:#888;font-weight:300;">СУММА</span></div>
+        <div class="tw-page-line"></div><div class="tw-page-line short"></div>
+        <div class="tw-page-line"></div>
+        <p class="tw-page-label">Финансовое планирование</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tw-form" id="preorder">
+    <p class="tw-form-head">ПРЕДЗАКАЗ</p>
+    <h2 class="tw-form-title">УЗНАЙТЕ ПЕРВЫМИ О ВЫХОДЕ</h2>
+    <form>
+      <div class="tw-form-row">
+        <input class="tw-input" type="text" placeholder="ИМЯ">
+        <input class="tw-input" type="email" placeholder="E-MAIL">
+      </div>
+      <div class="tw-radios">
+        <label class="tw-radio-label"><input type="radio" name="type" checked> КНИЖНЫЙ ПЕРЕПЛЁТ</label>
+        <label class="tw-radio-label"><input type="radio" name="type"> ВИНИЛОВАЯ ПАПКА</label>
+        <label class="tw-radio-label"><input type="radio" name="type"> ОБА ВАРИАНТА</label>
+      </div>
+      <button class="tw-btn" type="submit">ХОЧУ ПЕРВЫМ →</button>
+    </form>
+    <p class="tw-form-note">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+  </section>
+
+  <div class="tw-tg">
+    <span class="tw-tg-text">СЛЕДИТЕ ЗА ВЫХОДОМ В TELEGRAM</span>
+    <a class="tw-tg-btn" href="#">ПОДПИСАТЬСЯ</a>
   </div>
-</footer>
+
+  <footer class="tw-footer">
+    <span class="tw-footer-copy">© THE WAY, 2026</span>
+    <div class="tw-footer-links">
+      <a href="#">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</a>
+      <a href="#">thewayplanner.ru</a>
+    </div>
+  </footer>
+
+</div>
 
 </body>
 </html>

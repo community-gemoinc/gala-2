@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE WAY — Гайд по планеру</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#fff;}
+  .g-wrap{font-family:'Montserrat',sans-serif;color:#1A1A1A;background:#fff;max-width:900px;margin:0 auto;}
+  .g-nav{display:flex;align-items:center;justify-content:space-between;padding:28px 48px;border-bottom:0.5px solid #E0DDD9;}
+  .g-logo-name{font-size:13px;font-weight:200;letter-spacing:0.35em;}
+  .g-logo-mark{width:32px;height:32px;border:1px solid #1A1A1A;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:3px;}
+  .g-logo-w{font-size:11px;font-weight:200;letter-spacing:0.1em;}
+  .g-logo{display:flex;flex-direction:column;gap:2px;}
+  .g-nav-back{font-size:10px;font-weight:300;letter-spacing:0.2em;color:#888;text-decoration:none;}
+
+  .g-hero{padding:72px 48px 56px;border-bottom:0.5px solid #E0DDD9;}
+  .g-eyebrow{font-size:10px;font-weight:300;letter-spacing:0.4em;color:#888;margin-bottom:20px;}
+  .g-h1{font-size:32px;font-weight:100;letter-spacing:0.08em;margin-bottom:16px;}
+  .g-sub{font-size:12px;font-weight:300;color:#888;line-height:1.9;max-width:440px;}
+
+  .g-toc{padding:40px 48px;border-bottom:0.5px solid #E0DDD9;display:flex;gap:32px;flex-wrap:wrap;}
+  .g-toc-label{font-size:9px;font-weight:300;letter-spacing:0.4em;color:#bbb;width:100%;margin-bottom:4px;}
+  .g-toc-link{font-size:10px;font-weight:300;letter-spacing:0.2em;color:#888;text-decoration:none;padding:6px 0;border-bottom:0.5px solid transparent;}
+  .g-toc-link:hover{color:#1A1A1A;border-bottom-color:#E0DDD9;}
+
+  .g-section{padding:64px 48px;border-bottom:0.5px solid #E0DDD9;display:grid;grid-template-columns:180px 1fr;gap:48px;}
+  .g-section-num{font-size:10px;font-weight:300;letter-spacing:0.3em;color:#ccc;padding-top:4px;}
+  .g-section-title{font-size:14px;font-weight:200;letter-spacing:0.25em;margin-bottom:16px;}
+  .g-section-text{font-size:12px;font-weight:300;color:#555;line-height:1.9;margin-bottom:24px;}
+  .g-tip{background:#F8F6F3;padding:16px 20px;border-left:1.5px solid #D5D2CE;}
+  .g-tip-label{font-size:9px;font-weight:300;letter-spacing:0.3em;color:#aaa;margin-bottom:6px;}
+  .g-tip-text{font-size:11px;font-weight:300;color:#666;line-height:1.8;}
+  .g-steps{display:flex;flex-direction:column;gap:12px;margin-bottom:24px;}
+  .g-step{display:flex;gap:16px;align-items:flex-start;}
+  .g-step-n{font-size:10px;font-weight:300;letter-spacing:0.2em;color:#bbb;min-width:20px;padding-top:2px;}
+  .g-step-text{font-size:12px;font-weight:300;color:#555;line-height:1.8;}
+
+  .g-footer{padding:40px 48px;display:flex;align-items:center;justify-content:space-between;}
+  .g-footer-copy{font-size:10px;font-weight:300;color:#bbb;letter-spacing:0.1em;}
+  .g-footer-link{font-size:10px;font-weight:300;color:#bbb;letter-spacing:0.1em;text-decoration:none;}
+
+  @media (max-width:640px){
+    .g-section{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div class="g-wrap">
+
+  <nav class="g-nav">
+    <div class="g-logo">
+      <div class="g-logo-mark"><span class="g-logo-w">W</span></div>
+      <span class="g-logo-name">THE WAY</span>
+    </div>
+    <a class="g-nav-back" href="index.html">← НА САЙТ</a>
+  </nav>
+
+  <section class="g-hero">
+    <p class="g-eyebrow">ГАЙД ПО ПЛАНЕРУ</p>
+    <h1 class="g-h1">С ЧЕГО НАЧАТЬ</h1>
+    <p class="g-sub">Этот гайд поможет вам пройти первые шаги с планером THE WAY — от знакомства с ценностями до первой недели в работе. Следуйте шагам по порядку или переходите сразу к нужному разделу.</p>
+  </section>
+
+  <nav class="g-toc">
+    <span class="g-toc-label">РАЗДЕЛЫ</span>
+    <a class="g-toc-link" href="#compass">ВНУТРЕННИЙ КОМПАС</a>
+    <a class="g-toc-link" href="#goals">ЦЕЛИ НА ГОД</a>
+    <a class="g-toc-link" href="#month">ПЛАН НА МЕСЯЦ</a>
+    <a class="g-toc-link" href="#week">НЕДЕЛЯ</a>
+    <a class="g-toc-link" href="#budget">БЮДЖЕТ</a>
+    <a class="g-toc-link" href="#review">ИТОГИ</a>
+  </nav>
+
+  <section class="g-section" id="compass">
+    <div class="g-section-num">ШАГ 01</div>
+    <div>
+      <p class="g-section-title">ВНУТРЕННИЙ КОМПАС</p>
+      <p class="g-section-text">Начните не с задач, а с себя. Раздел «Внутренний компас» — это ваша точка отсчёта. Запишите ценности, которые действительно важны, — они станут фильтром для всех решений в течение года.</p>
+      <div class="g-steps">
+        <div class="g-step"><span class="g-step-n">1.</span><span class="g-step-text">Найдите страницу «Мои ценности» в самом начале планера.</span></div>
+        <div class="g-step"><span class="g-step-n">2.</span><span class="g-step-text">Запишите 5–7 ценностей — без спешки, в тишине.</span></div>
+        <div class="g-step"><span class="g-step-n">3.</span><span class="g-step-text">Перечитайте их вслух. Оставьте только те, что отзываются.</span></div>
+      </div>
+      <div class="g-tip">
+        <p class="g-tip-label">СОВЕТ</p>
+        <p class="g-tip-text">Возвращайтесь к этой странице раз в квартал — ценности могут меняться, и это нормально.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="g-section" id="goals">
+    <div class="g-section-num">ШАГ 02</div>
+    <div>
+      <p class="g-section-title">ЦЕЛИ НА ГОД</p>
+      <p class="g-section-text">После ценностей — большие цели. В планере есть раздел «Детализация цели» для каждой из них: SMART-формат, мотивация, шаги и трекер прогресса.</p>
+      <div class="g-steps">
+        <div class="g-step"><span class="g-step-n">1.</span><span class="g-step-text">Запишите не больше 5–7 целей на год.</span></div>
+        <div class="g-step"><span class="g-step-n">2.</span><span class="g-step-text">Для каждой важной цели заполните страницу «Детализация» — укажите тип (результативная или процессная), шаги и дедлайн.</span></div>
+        <div class="g-step"><span class="g-step-n">3.</span><span class="g-step-text">Отметьте 1–2 цели как приоритетные на ближайший квартал.</span></div>
+      </div>
+      <div class="g-tip">
+        <p class="g-tip-label">СОВЕТ</p>
+        <p class="g-tip-text">Процессная цель — это привычка или регулярное действие. Для неё в планере есть трекер по дням месяца.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="g-section" id="month">
+    <div class="g-section-num">ШАГ 03</div>
+    <div>
+      <p class="g-section-title">ПЛАН НА МЕСЯЦ</p>
+      <p class="g-section-text">В начале каждого месяца — две-три минуты на месячный план. Он помогает связать большие цели с конкретными неделями.</p>
+      <div class="g-steps">
+        <div class="g-step"><span class="g-step-n">1.</span><span class="g-step-text">Откройте страницу «План на месяц» нужного месяца.</span></div>
+        <div class="g-step"><span class="g-step-n">2.</span><span class="g-step-text">В колонке «Фокус» запишите главную тему каждой недели.</span></div>
+        <div class="g-step"><span class="g-step-n">3.</span><span class="g-step-text">Отметьте важные даты и события в сетке календаря.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="g-section" id="week">
+    <div class="g-section-num">ШАГ 04</div>
+    <div>
+      <p class="g-section-title">НЕДЕЛЬНЫЙ РАЗВОРОТ</p>
+      <p class="g-section-text">Сердце планера — недельные страницы. Каждая неделя начинается с фокуса и трёх приоритетных задач, затем — пространство для каждого дня.</p>
+      <div class="g-steps">
+        <div class="g-step"><span class="g-step-n">1.</span><span class="g-step-text">В воскресенье вечером или в понедельник утром заполните раздел «Фокус недели».</span></div>
+        <div class="g-step"><span class="g-step-n">2.</span><span class="g-step-text">Выберите 3 главные задачи недели — выделите их визуально.</span></div>
+        <div class="g-step"><span class="g-step-n">3.</span><span class="g-step-text">Каждый день вечером — 2 минуты на итоги дня.</span></div>
+      </div>
+      <div class="g-tip">
+        <p class="g-tip-label">СОВЕТ</p>
+        <p class="g-tip-text">Не пытайтесь заполнить всё заранее. Планер — живой инструмент, а не расписание.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="g-section" id="budget">
+    <div class="g-section-num">ШАГ 05</div>
+    <div>
+      <p class="g-section-title">БЮДЖЕТ НА МЕСЯЦ</p>
+      <p class="g-section-text">Финансовый раздел построен по принципу: сначала накопления, потом расходы. Это помогает сохранять баланс между тем, что важно, и тем, что просто привычно.</p>
+      <div class="g-steps">
+        <div class="g-step"><span class="g-step-n">1.</span><span class="g-step-text">В начале месяца запишите ожидаемые доходы.</span></div>
+        <div class="g-step"><span class="g-step-n">2.</span><span class="g-step-text">Сразу выделите сумму на накопления и инвестиции.</span></div>
+        <div class="g-step"><span class="g-step-n">3.</span><span class="g-step-text">Остаток распределите по статьям обязательных и свободных расходов.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="g-section" id="review">
+    <div class="g-section-num">ШАГ 06</div>
+    <div>
+      <p class="g-section-title">ИТОГИ МЕСЯЦА</p>
+      <p class="g-section-text">В конце каждого месяца планер предлагает остановиться и оглянуться. Это не оценка — это точка роста.</p>
+      <div class="g-steps">
+        <div class="g-step"><span class="g-step-n">1.</span><span class="g-step-text">Ответьте на вопросы страницы «Итоги месяца».</span></div>
+        <div class="g-step"><span class="g-step-n">2.</span><span class="g-step-text">Отметьте прогресс по целям на трекере.</span></div>
+        <div class="g-step"><span class="g-step-n">3.</span><span class="g-step-text">Скорректируйте приоритеты на следующий месяц.</span></div>
+      </div>
+      <div class="g-tip">
+        <p class="g-tip-label">СОВЕТ</p>
+        <p class="g-tip-text">Путь важнее результата. Даже незаполненные страницы — это часть вашего пути.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="g-footer">
+    <span class="g-footer-copy">© THE WAY, 2026</span>
+    <a class="g-footer-link" href="index.html">thewayplanner.ru</a>
+  </footer>
+
+</div>
+
+</body>
+</html>
