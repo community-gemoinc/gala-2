@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Way — Путь</title>
+<style>
+  :root{
+    --bg:#f7f5f0;
+    --paper:#ffffff;
+    --ink:#2b2926;
+    --ink-soft:#6b675f;
+    --line:#e4e0d8;
+    --accent:#8a8365;
+    --accent-soft:#eeece2;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Helvetica Neue', Arial, sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 32px;}
+  h1,h2,h3{
+    text-transform:uppercase;
+    font-weight:400;
+    letter-spacing:0.12em;
+  }
+
+  header{
+    position:sticky;top:0;z-index:10;
+    background:rgba(247,245,240,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  header .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    height:76px;
+  }
+  .logo{
+    font-size:20px;
+    letter-spacing:0.3em;
+    text-transform:uppercase;
+    font-weight:400;
+  }
+  .logo small{display:block;font-size:10px;letter-spacing:0.2em;color:var(--ink-soft);}
+  nav ul{list-style:none;display:flex;gap:36px;}
+  nav a{
+    font-size:12px;letter-spacing:0.15em;text-transform:uppercase;
+    color:var(--ink-soft);
+    transition:color .2s;
+  }
+  nav a:hover{color:var(--ink);}
+
+  .hero{
+    padding:120px 0 100px;
+    text-align:center;
+    border-bottom:1px solid var(--line);
+  }
+  .hero .eyebrow{
+    font-size:12px;letter-spacing:0.35em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:24px;
+  }
+  .hero h1{
+    font-size:56px;letter-spacing:0.08em;
+    max-width:760px;margin:0 auto 28px;
+  }
+  .hero p.sub{
+    font-size:16px;color:var(--ink-soft);
+    max-width:480px;margin:0 auto 44px;
+    font-style:italic;
+    letter-spacing:0.01em;
+  }
+  .btn{
+    display:inline-block;
+    padding:16px 40px;
+    border:1px solid var(--ink);
+    font-size:12px;letter-spacing:0.2em;text-transform:uppercase;
+    transition:background .2s,color .2s;
+  }
+  .btn:hover{background:var(--ink);color:var(--paper);}
+  .btn-ghost{border-color:var(--line);color:var(--ink-soft);margin-left:16px;}
+  .btn-ghost:hover{border-color:var(--ink);background:transparent;color:var(--ink);}
+
+  section{padding:100px 0;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+
+  .philosophy{text-align:center;}
+  .philosophy h2{font-size:14px;letter-spacing:0.3em;color:var(--accent);margin-bottom:16px;}
+  .philosophy h3{font-size:36px;max-width:640px;margin:0 auto 40px;letter-spacing:0.05em;}
+  .pillars{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:32px;
+    margin-top:56px;
+  }
+  .pillar{padding:24px 12px;}
+  .pillar .num{font-size:11px;color:var(--accent);letter-spacing:0.2em;margin-bottom:14px;}
+  .pillar h4{
+    font-size:13px;letter-spacing:0.1em;text-transform:uppercase;
+    font-weight:400;margin-bottom:10px;
+  }
+  .pillar p{font-size:13px;color:var(--ink-soft);}
+
+  .products{background:var(--paper);}
+  .section-head{text-align:center;margin-bottom:64px;}
+  .section-head h2{font-size:14px;letter-spacing:0.3em;color:var(--accent);margin-bottom:16px;}
+  .section-head h3{font-size:36px;letter-spacing:0.05em;}
+
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+  .card{
+    border:1px solid var(--line);
+    padding:0;
+    display:flex;flex-direction:column;
+  }
+  .card-image{
+    height:340px;
+    background:linear-gradient(160deg, var(--accent-soft), var(--paper));
+    display:flex;align-items:center;justify-content:center;
+    border-bottom:1px solid var(--line);
+    position:relative;
+  }
+  .mock-planner{
+    width:150px;height:200px;
+    background:var(--paper);
+    border:1px solid var(--ink);
+    box-shadow:6px 6px 0 var(--accent-soft);
+    display:flex;align-items:center;justify-content:center;
+    font-size:10px;letter-spacing:0.2em;color:var(--ink-soft);
+    text-transform:uppercase;
+  }
+  .mock-planner.vinyl{border-radius:0;box-shadow:none;border:1px dashed var(--ink-soft);}
+  .card-body{padding:36px;}
+  .card-body h4{
+    font-size:18px;letter-spacing:0.1em;text-transform:uppercase;
+    font-weight:400;margin-bottom:12px;
+  }
+  .card-body p{font-size:14px;color:var(--ink-soft);margin-bottom:20px;}
+  .card-body .meta{
+    display:flex;gap:18px;font-size:11px;letter-spacing:0.1em;
+    text-transform:uppercase;color:var(--accent);
+  }
+
+  .quote{
+    text-align:center;
+    padding:110px 0;
+  }
+  .quote blockquote{
+    font-size:28px;font-style:italic;max-width:640px;margin:0 auto 24px;
+    letter-spacing:0.01em;color:var(--ink);
+  }
+  .quote span{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-soft);}
+
+  footer{padding:60px 0 40px;text-align:center;}
+  footer .logo{margin-bottom:20px;}
+  .domains{font-size:12px;color:var(--ink-soft);letter-spacing:0.05em;margin-bottom:28px;}
+  .domains span{margin:0 10px;}
+  footer .fine{font-size:11px;color:var(--ink-soft);letter-spacing:0.05em;}
+
+  @media (max-width:860px){
+    .pillars{grid-template-columns:1fr 1fr;}
+    .cards{grid-template-columns:1fr;}
+    .hero h1{font-size:38px;}
+    nav ul{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo">The Way<small>Путь — Stationery with Meaning</small></div>
+    <nav>
+      <ul>
+        <li><a href="#philosophy">Philosophy</a></li>
+        <li><a href="#planners">Planners</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">The Way Is The Essence</div>
+    <h1>Stationery With Meaning</h1>
+    <p class="sub">A weekly planner for those who believe the path toward their goals matters as much as the goals themselves.</p>
+    <a href="#planners" class="btn">View Planners</a>
+    <a href="#philosophy" class="btn btn-ghost">Our Philosophy</a>
+  </div>
+</section>
+
+<section class="philosophy" id="philosophy">
+  <div class="wrap">
+    <h2>Philosophy</h2>
+    <h3>Harmony, balance, and mindful consumption — in a single A5 page.</h3>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="num">01</div>
+        <h4>Healthy Lifestyle</h4>
+        <p>Structure that supports wellbeing, not another source of pressure.</p>
+      </div>
+      <div class="pillar">
+        <div class="num">02</div>
+        <h4>Financial Clarity</h4>
+        <p>Proper money management as a quiet, ongoing practice.</p>
+      </div>
+      <div class="pillar">
+        <div class="num">03</div>
+        <h4>Independent Planning</h4>
+        <p>Built around personal values and interests, not a template for everyone.</p>
+      </div>
+      <div class="pillar">
+        <div class="num">04</div>
+        <h4>Minimalism</h4>
+        <p>Mindful consumption of fewer, better-made things.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="products" id="planners">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>The Collection</h2>
+      <h3>Two Covers, One Way</h3>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-image"><div class="mock-planner">Hardcover · A5</div></div>
+        <div class="card-body">
+          <h4>Hardcover Edition</h4>
+          <p>Fabric or leather-style cover with rounded page edges. Built for daily wear on a desk that means to last.</p>
+          <div class="meta"><span>A5</span><span>Rounded Edges</span><span>Yearly Plan</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-image"><div class="mock-planner vinyl">Vinyl Folder · A5</div></div>
+        <div class="card-body">
+          <h4>Vinyl Edition</h4>
+          <p>Transparent vinyl cover with an elastic band, standard page edges. Same pages, a lighter yearly plan layout.</p>
+          <div class="meta"><span>A5</span><span>Standard Edges</span><span>Elastic Band</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quote">
+  <div class="wrap">
+    <blockquote>"Not the destination. The way you walk toward it."</blockquote>
+    <span>— The Way</span>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="logo">The Way<small>Путь</small></div>
+    <div class="domains">
+      <span>thewayplanner.ru</span>·<span>thewayplanners.online</span>·<span>thewayplanner.online</span>·<span>thewayplanners.ru</span>
+    </div>
+    <p class="fine">Prototype build — layout &amp; copy draft, not final. For above-average income audience seeking harmony and balance.</p>
+  </div>
+</footer>
+
+</body>
+</html>
